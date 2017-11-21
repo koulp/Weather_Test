@@ -21,7 +21,11 @@ public class WeatherTest {
         JSONArray daily = (JSONArray) myResponse.get("dailysummary");
         ArrayList<String> list = new ArrayList<String>();
 
-        System.out.println(myResponse.toString());
+        if(daily !=null) {
+            System.out.println("Response successfull");
+            System.out.println(daily.toString());
+        }else
+            System.out.println("Response unsuccessfull"); 
         CSV csv = new CSV();
         csv.exportfile(daily);
     }
